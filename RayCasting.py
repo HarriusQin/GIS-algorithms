@@ -128,27 +128,3 @@ def point_in_simple_polygon(point: Point, poly: Polygon) -> bool:
 
     return True
 
-
-# PROTOTYPE, DEPRECATED
-# def in_ring(px: float, py: float, ring_coords: list[tuple[float, float]]) -> bool:
-#     n = len(ring_coords)
-#     if n < 3:
-#         return False
-#
-#     inside = False
-#     (x_old, y_old) = ring_coords[0]
-#     for i in range(1, n + 1):
-#         (x_new, y_new) = ring_coords[i % n]
-#         if y_new == y_old:
-#             x_old = x_new
-#             y_old = y_new
-#             continue
-#         if y_old > y_new:
-#             x_old, x_new = x_new, x_old
-#             y_old, y_new = y_new, y_old
-#         if y_old <= py < y_new:
-#             if px < (x_new - x_old) * (py - y_old) / (y_new - y_old) + x_old:
-#                 inside = not inside
-#         x_old, y_old = x_new, y_new
-#
-#     return inside
